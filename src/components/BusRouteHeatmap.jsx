@@ -243,19 +243,19 @@ const BusRouteHeatmap = () => {
     <Card className="w-full h-full flex flex-col gap-4">
       <div className="flex flex-col">
         <CardHeader className="flex flex-col gap-4">
-          <CardTitle className="mb-4">Heat Map - Buenos Aires - Passenger Boarding and Alighting</CardTitle>
+          <CardTitle className="mb-4">Mapa de calor - Buenos Aires - Pasajeros ascenso y descenso</CardTitle>
           <div className="flex flex-row gap-x-2">
             <button
               className={`px-4 py-2 rounded ${displayMode === 'on' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
               onClick={() => setDisplayMode('on')}
             >
-              Passenger Boarding
+              Ascenso de pasajeros
             </button>
             <button
               className={`px-4 py-2 rounded ${displayMode === 'off' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
               onClick={() => setDisplayMode('off')}
             >
-              Passenger Alighting
+              Descenso de pasajeros
             </button>
           </div>
         </CardHeader>
