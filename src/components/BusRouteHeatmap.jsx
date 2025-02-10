@@ -86,13 +86,13 @@ const BusRouteHeatmap = () => {
     });
 
     return clusters.map((cluster, index) => ({
-      section: `Cluster ${index + 1}`,
+      section: `Cluster ${index + 2}`, //TODO: Remove this line
       position: cluster.position,
       name: `Sections ${cluster.sections.join(', ')}`,
       passengersOn: cluster.passengersOn,
       passengersOff: cluster.passengersOff,
       includedSections: cluster.sections
-    }));
+    })).slice(1); //TODO: Remove this line
   };
 
   const clearMarkers = () => {
@@ -137,7 +137,8 @@ const BusRouteHeatmap = () => {
         })).filter(point => !isNaN(point.section) && !isNaN(point.tipo) && 
                            !isNaN(point.position.lat) && !isNaN(point.position.lng));
 
-        setRawPoints(points);
+        const filteredPoints = points.filter(point => point.section !== 1);
+        setRawPoints(filteredPoints); //TODO: Remove this line
         setClusteredStops(clusterStops(points));
         setError(null);
       } catch (error) {
